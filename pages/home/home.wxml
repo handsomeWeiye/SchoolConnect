@@ -1,0 +1,16 @@
+
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}" easing-function="easeInOutCubic"  >
+    <block wx:for="{{imgUrls}}">
+        <swiper-item>
+            <image class="swiper-image" src="{{item}}" />
+        </swiper-item>
+    </block>
+</swiper>
+
+<van-grid column-num="3">
+<van-grid-item icon="phone-circle-o" text="电话白名单" bind:tap="toWhiteList"/>
+<van-grid-item icon="notes-o" text="签到记录" bind:tap="toSignList"/>
+<van-grid-item icon="search" text="定位" bind:tap="toLocation"/>
+<van-grid-item icon="desktop-o" text="设备绑定" bind:tap="toBindDevice"/>
+</van-grid>
+

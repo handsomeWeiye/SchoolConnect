@@ -1,0 +1,16 @@
+<!-- login -->
+
+    
+<van-field left-icon="phone-o"   placeholder="手机号" focus="true"></van-field>
+
+
+<van-field left-icon="bookmark-o"  placeholder="密码" focus="true"> </van-field>
+
+
+<div id="reset"><navigator url="../../pages/reset/reset">
+<view>忘记密码</view>
+</navigator></div>
+
+
+<van-button>登录</van-button>
+<van-button>去注册</van-button>

@@ -1,0 +1,9 @@
+<!-- login -->
+
+    
+<van-field left-icon="phone-o"   placeholder="手机号" focus="true"></van-field>
+<van-field left-icon="bookmark-o"  placeholder="密码" focus="true"> </van-field>
+<van-field left-icon="bookmark-o"  placeholder="确认密码" focus="true"> </van-field>
+
+
+<van-button>注册</van-button>

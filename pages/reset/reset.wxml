@@ -1,0 +1,12 @@
+<!-- login -->
+
+    
+<van-field left-icon="phone-o"   placeholder="手机号" focus="true"></van-field>
+<van-field left-icon="bookmark-o"  placeholder="新的密码" focus="true"> </van-field>
+<van-cell-group>
+<van-field left-icon="comment-o"   placeholder="验证码" focus="true" use-button-slot>    <van-button slot="button" size="small" type="primary"
+      >发送验证码</van-button
+    > </van-field>
+</van-cell-group>
+
+<van-button>修改密码</van-button>
