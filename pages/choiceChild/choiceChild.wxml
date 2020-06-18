@@ -1,2 +1,5 @@
-<!--pages/choiceChild/choiceChild.wxml-->
-<text>pages/choiceChild/choiceChild.wxml</text>
+<view style="height:5rem"></view>
+
+<van-grid gutter="{{ 10 }}" column-num="2">
+  <van-grid-item icon="user-o" text="{{'用户' +  index + '   ' + '设备id'}}" wx:for="{{ 2 }}" wx:for-index="index"/>
+</van-grid>

@@ -1,23 +1,18 @@
-var api = require('../../api/api.js');
-var route =require('../../route/routes.js');
+// pages/about/about.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imageUrl:['']
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var imageUrl = api.getSplashList()
-    console.log(imageUrl);
-    this.setData({
-      imageUrl:res
-    })
+
   },
 
   /**
@@ -27,18 +22,11 @@ Page({
 
   },
 
-  goHome:function(){
-    wx.switchTab({
-      url: '../home/home',
-    })
-  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    setTimeout(function () {
-      route.toHome()
-    }, 3500) //
+
   },
 
   /**

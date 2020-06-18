@@ -1,2 +1,57 @@
-<!--pages/whiteList/whiteList.wxml-->
-<text>pages/whiteList/whiteList.wxml</text>
+<van-cell-group>
+<van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="电话1(SOS)"
+    placeholder="该电话同时为紧急联系电话"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ password }}"
+    label="电话2"
+
+    required
+    border="{{ false }}"
+  />
+
+    <van-field
+    value="{{ password }}"
+    label="电话3"
+
+    required
+    border="{{ false }}"
+  />
+    <van-field
+    value="{{ password }}"
+    label="电话4"
+
+    required
+    border="{{ false }}"
+  />
+    <van-field
+    value="{{ password }}"
+    label="电话5"
+    required
+    border="{{ false }}"
+  />
+    <van-field
+    value="{{ password }}"
+
+    label="电话6"
+    border="{{ false }}"
+  />
+
+      <van-field
+    value="{{ password }}"
+
+    label="电话7"
+
+    border="{{ false }}"
+  />
+
+  
+</van-cell-group>
+
+<van-button  round  type="danger">添加电话白名单</van-button>

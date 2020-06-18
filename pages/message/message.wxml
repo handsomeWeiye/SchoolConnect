@@ -1,2 +1,15 @@
-<!--pages/message/message.wxml-->
-<text>pages/message/message.wxml</text>
+<!-- 
+
+<view wx:for="{{signList.slice(0,10)}}"  wx:for-index="index" wx:for-item="item">
+<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
+  <van-cell-group>
+    <van-cell title="{{'您的孩子于' + item.createDate + 入园打卡}}" value="{{item.deviceId}}" />
+  </van-cell-group>
+  <view slot="right">删除</view>
+</van-swipe-cell>
+</view>
+
+
+<van-button type="warning">有消息微信通知我</van-button>
+
+ -->

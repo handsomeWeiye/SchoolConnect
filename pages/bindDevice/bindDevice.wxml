@@ -1,2 +1,63 @@
-<!--pages/bindDevice/bindDevice.wxml-->
-<text>pages/bindDevice/bindDevice.wxml</text>
+
+<van-cell-group>
+<van-field  value="{{ password }}"
+    type="password"
+    label="设备编号"
+    placeholder="请输入密码"
+    required
+    border="{{ false }}"
+    use-button-slot> <van-button slot="button" size="small" type="primary" round plain icon="scan"
+      >扫一扫</van-button
+    > </van-field>
+
+
+ <van-field
+    value="{{ username }}"
+    required
+    clearable
+    label="学校"
+    placeholder="请输入学校"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+    value="{{ password }}"
+    label="年级"
+    placeholder="请输入年级"
+    required
+    border="{{ false }}"
+  />
+
+    <van-field
+    value="{{ password }}"
+    label="班级"
+    placeholder="请输入班级"
+    required
+    border="{{ false }}"
+  />
+    <van-field
+    value="{{ password }}"
+    label="姓名"
+    placeholder="请输入姓名"
+    required
+    border="{{ false }}"
+  />
+    <van-field
+    value="{{ password }}"
+    label="性别"
+    placeholder="请输入性别"
+    required
+    border="{{ false }}"
+  />
+    <van-field
+    value="{{ password }}"
+
+    label="学号"
+    placeholder="请输入学号"
+    border="{{ false }}"
+  />
+
+  
+</van-cell-group>
+
+<van-button  round  type="danger">绑定设备</van-button>

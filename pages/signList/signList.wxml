@@ -1,2 +1,2 @@
-<!--pages/signList/signList.wxml-->
-<text>pages/signList/signList.wxml</text>
+
+<van-cell title="打卡记录" value="您的孩子 于2020.11.20 8:30 进入 十陵小学 " wx:for="{{10}}" />

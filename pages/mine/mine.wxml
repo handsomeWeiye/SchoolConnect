@@ -1,2 +1,81 @@
-<!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+
+
+
+<van-image
+  round
+  width="4rem"
+  height="4rem"
+  fit="cover"
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/>
+
+<text >Enki</text>
+
+<van-button plain round  type="danger">去充值</van-button>
+
+<text >您的会员已到期</text>
+
+
+
+
+
+
+
+<van-cell-group>
+<van-cell
+  is-link
+  size="large"
+  title="充值"
+  link-type="navigateTo"
+  url="/pages/dashboard/index"
+  custom-class="navbar"
+/>
+</van-cell-group>
+
+
+<van-cell-group>
+
+<van-cell
+  is-link
+  size="large"
+  title="信息管理"
+  link-type="navigateTo"
+  url="/pages/dashboard/index"
+  custom-class="navbar"
+/>
+<van-cell
+  is-link
+  size="large"
+  title="设备绑定"
+  link-type="navigateTo"
+  url="/pages/dashboard/index"
+  custom-class="navbar"
+/>
+<van-cell
+  is-link
+  size="large"
+  title="设备解绑"
+  link-type="navigateTo"
+  url="/pages/dashboard/index"
+  custom-class="navbar"
+/>
+<van-cell
+  is-link
+  size="large"
+  title="修改密码"
+  link-type="navigateTo"
+  url="/pages/dashboard/index"
+  custom-class="navbar"
+/>
+<van-cell
+  is-link
+  size="large"
+  title="关于我们"
+  link-type="navigateTo"
+  url="/pages/dashboard/index"
+  custom-class="navbar"
+/>
+
+</van-cell-group>
+
+<van-button  round  type="danger">退出</van-button>

@@ -257,7 +257,7 @@ function addSign(deviceId,phone){
 }
 function getSignList({deviceId,phone}){
 
-    var signList = conditionQuery(sign,"deviceId",deviceId);
+    var signList = conditionQuery(sign,"phone",phone);
     console.log(signList);
     return signList;
     
@@ -351,7 +351,6 @@ function saveOrder(price,goodsName,remark,orderId,openId,phone){
     order.set('remark',remark)
     order.set('openId',openId)
     order.set('phone',phone)
-    order.set('remark',remark)
     order.save().then(res=>{
         console.log(res);
         if(res.code == 0){

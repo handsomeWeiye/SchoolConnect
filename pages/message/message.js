@@ -1,4 +1,5 @@
 // pages/message/message.js
+var api = require('../../api/api.js')
 Page({
 
   /**
@@ -12,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    api.getSignList({phone:'18306832083'})
   },
 
   /**
