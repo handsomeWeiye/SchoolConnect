@@ -50,11 +50,11 @@ function toLoaction() {
       })
 }
 
-function toSignList() {
-    wx.navigateTo({
-        url: '/pages/signList/signList'
-      })
-}
+// function toSignList() {
+//     wx.navigateTo({
+//         url: '/pages/signList/signList'
+//       })
+// }
 
 function toMine() {
     wx.switchTab({

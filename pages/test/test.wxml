@@ -1,0 +1,2 @@
+<!--pages/test/test.wxml-->
+<text>log + {{res}}</text>
