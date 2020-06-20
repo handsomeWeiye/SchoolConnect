@@ -17,6 +17,7 @@ Page({
     _class:undefined,
     deviceId:undefined,
     phone:undefined,
+    scanRes:undefined,
   },
 
   /**
@@ -57,7 +58,20 @@ Page({
       [name]:phoneNum
     })
   },
+  scanCode:function(){
+    var _this = this;
+    // 允许从相机和相册扫码
+    wx.scanCode({
+      success: (res) => {
+        var result = res.result;
 
+        _this.setData({
+          scanRes: result,
+          deviceId:result
+        })
+      }
+    })
+  },
   onButtonClick:function(){
     if(this.data.isAdd){
       api.saveStudentInfo({name:this.data.name, studentNum:this.data.studentNum, sex:this.data.sex, school:this.data.school, grade:this.data.grade, _class:this.data._class,  phone:sputil.getPhone(), deviceId:this.data.deviceId })

@@ -1,3 +1,6 @@
+const api = require("../../api/api");
+const routes = require("../../route/routes");
+
 // pages/reset/reset.js
 Page({
 
@@ -5,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    phone:undefined,
+    password:undefined,
+    code:undefined,
   },
 
   /**
@@ -14,7 +19,35 @@ Page({
   onLoad: function (options) {
 
   },
-
+  sendSms:function(){
+    api.sendSms({phone:this.data.phone}).then(res=>{
+      console.log(res);
+      console.log('发送验证码成功');
+    }).catch(err=>{
+      console.log(err);
+      console.log('发送验证码失败');
+    })
+  },
+  reset:function(){
+    api.reset({phone:this.data.phone,password:this.data.password,code:this.data.code}).then(res=>{
+      console.log(res);
+      console.log('修改密码成功');
+      routes.toLogin();
+    }).catch(err=>{
+      console.log(err);
+      console.log('修改密码失败');
+    })
+  },
+  inputChange:function(e){
+    console.log(e);
+    var phoneNum = e.detail;
+    var name = e.currentTarget.dataset.name;
+    console.log(phoneNum);
+    console.log(name);
+    this.setData({
+      [name]:phoneNum
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,19 +1,30 @@
 // pages/message/message.js
-var api = require('../../api/api.js')
+var api = require('../../api/api.js');
+const sputil = require('../../utils/sputil.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    signList:undefined,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    api.getSignList({phone:'18306832083'})
+    api.getSignListAll({phone:sputil.getPhone()}).then(
+      res=>{
+        console.log(res);
+        this.setData({
+          signList:res,
+        })
+      }
+    ).catch(err=>{
+      console.log(err);
+      
+    })
   },
 
   /**

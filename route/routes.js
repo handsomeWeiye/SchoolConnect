@@ -12,6 +12,12 @@ function toReset() {
       })
 }
 
+function toAbout() {
+  wx.navigateTo({
+      url: '/pages/about/about'
+    })
+}
+
 function toRegister() {
     wx.navigateTo({
         url: '/pages/register/register'
@@ -62,10 +68,28 @@ function toMessage() {
         url: '/pages/message/message'
       })
 }
-function toBindDevice() {
+function toInfoManage(deviceId) {
     wx.navigateTo({
-        url: '/pages/bindDevice/bindDevice'
+        url: '/pages/bindDevice/bindDevice?deviceId=' + deviceId
       })
+}
+
+function toBindDevice() {
+  wx.navigateTo({
+      url: '/pages/bindDevice/bindDevice'
+    })
+}
+
+function toUnBindDevice() {
+  wx.navigateTo({
+      url: '/pages/bindDevice/bindDevice'
+    })
+}
+
+function toPay() {
+  wx.navigateTo({
+      url: '/pages/pay/pay'
+    })
 }
 
 function toChoiceChild(routeStr){
@@ -75,6 +99,7 @@ function toChoiceChild(routeStr){
 }
 
 module.exports = {
+    toPay:toPay,
     toLogin: toLogin,
     toReset: toReset,
     toRegister:toRegister,
@@ -86,5 +111,7 @@ module.exports = {
     toMine: toMine,
     toMessage: toMessage,
     toBindDevice:toBindDevice,
-    toChoiceChild:toChoiceChild
+    toChoiceChild:toChoiceChild,
+    toInfoManage:toInfoManage,
+    toAbout:toAbout,
   } 

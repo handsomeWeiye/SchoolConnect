@@ -1,15 +1,14 @@
-<!-- 
 
-<view wx:for="{{signList.slice(0,10)}}"  wx:for-index="index" wx:for-item="item">
+
+<view wx:for="{{signList}}"  wx:for-index="index" wx:for-item="item" wx:key="for">
 <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
   <van-cell-group>
-    <van-cell title="{{'您的孩子于' + item.createDate + 入园打卡}}" value="{{item.deviceId}}" />
+    <van-cell title="您的孩子于{{ item.createdAt }}入园打卡" value="设备Id: {{item.deviceId}}" />
   </van-cell-group>
-  <view slot="right">删除</view>
 </van-swipe-cell>
 </view>
 
+<view class="container1"></view>
+<van-button type="danger" class="centerButton" icon="bulb-o">有消息微信通知我</van-button>
 
-<van-button type="warning">有消息微信通知我</van-button>
 
- -->

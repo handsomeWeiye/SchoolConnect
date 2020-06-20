@@ -1,9 +1,13 @@
 <!-- login -->
 
     
-<van-field left-icon="phone-o"   placeholder="手机号" focus="true"></van-field>
-<van-field left-icon="bookmark-o"  placeholder="密码" focus="true"> </van-field>
-<van-field left-icon="bookmark-o"  placeholder="确认密码" focus="true"> </van-field>
+<van-field left-icon="phone-o"   placeholder="手机号" focus="true" bind:change="inputChange"
+    data-name="phone"></van-field>
+<van-field bind:change="inputChange"
+    data-name="password" left-icon="bookmark-o" password placeholder="密码" focus="true" > </van-field>
+<van-field bind:change="inputChange"
+    data-name="password1" left-icon="bookmark-o" password placeholder="确认密码" focus="true"> </van-field>
 
-
-<van-button>注册</van-button>
+<view class="container1">
+    <van-button round bind:tap="register"  size="large" class="centerButton" type="danger" size="normal">注册</van-button>
+</view>

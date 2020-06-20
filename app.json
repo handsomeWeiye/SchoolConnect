@@ -1,35 +1,29 @@
 {
   "pages": [
+    "pages/splash/splash",
+    "pages/login/login",
+    "pages/mine/mine",
     "pages/bindDevice/bindDevice",
+    "pages/whiteList/whiteList",
+
+
+    "pages/reset/reset",
+    "pages/register/register",
+    "pages/message/message",
+
     "pages/home/home",
     "pages/signList/signList",
 
-    "pages/whiteList/whiteList",
-
     "pages/choiceChild/choiceChild",
-    "pages/splash/splash",
-
-
     "pages/test/test",
     "pages/location/location",
     "pages/about/about",
-    "pages/pay/pay",
-
-
-
-
-
-    "pages/mine/mine",
-    "pages/message/message",
-    "pages/reset/reset",
-    "pages/register/register",
-    "pages/login/login"
-
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "校园通",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

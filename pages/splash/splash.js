@@ -1,5 +1,7 @@
 var api = require('../../api/api.js');
 var route =require('../../route/routes.js');
+const sputil = require('../../utils/sputil.js');
+const routes = require('../../route/routes.js');
 Page({
 
   /**
@@ -13,7 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  var that = this;
   api.getSplashList().then(res=>{
   console.log(res);
   this.setData({
@@ -36,8 +37,12 @@ Page({
    */
   onShow: function () {
     setTimeout(function () {
-      route.toHome()
-    }, 100000) //
+      if(sputil.isLogin()){
+        routes.toHome();
+      }else{
+        routes.toLogin();
+      }
+    }, 1000) //
   },
 
   /**

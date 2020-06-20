@@ -1,19 +1,44 @@
 
 
-
-<van-image
+<view class="row">
+<view class="column">
+  <van-image
   round
   width="4rem"
   height="4rem"
   fit="cover"
-  src="https://img.yzcdn.cn/vant/cat.jpeg"
+  src="{{userInfo.avatar}}"
 />
+<text >{{userInfo.nickName}}</text>
 
-<text >Enki</text>
+</view>
 
-<van-button plain round  type="danger">去充值</van-button>
 
-<text >您的会员已到期</text>
+<view class="column">
+<view wx:if="{{isPay}}">
+
+<view class="column">
+<van-button plain round  type="primary">VIP</van-button>
+
+<text class="textred">到期时间 {{userInfo.endDate.iso}}</text>
+
+</view>
+
+</view>
+<view wx:else>
+<view class="column">
+  <van-button plain round  type="danger" bind:tap="toPay">去充值</van-button>
+
+<text style="color:grey;">您的会员已到期</text>
+</view>
+</view>
+
+
+</view>
+
+</view>
+
+
 
 
 
@@ -26,8 +51,7 @@
   is-link
   size="large"
   title="充值"
-  link-type="navigateTo"
-  url="/pages/dashboard/index"
+  bind:tap="toPay"
   custom-class="navbar"
 />
 </van-cell-group>
@@ -39,43 +63,40 @@
   is-link
   size="large"
   title="信息管理"
-  link-type="navigateTo"
-  url="/pages/dashboard/index"
+  bind:tap="toInfoManage"
+  data-route="toInfoManage"
   custom-class="navbar"
 />
 <van-cell
   is-link
   size="large"
   title="设备绑定"
-  link-type="navigateTo"
-  url="/pages/dashboard/index"
+bind:tap="toBindDevice"
   custom-class="navbar"
 />
 <van-cell
   is-link
   size="large"
   title="设备解绑"
-  link-type="navigateTo"
-  url="/pages/dashboard/index"
+bind:tap="toUnBindDevice"
   custom-class="navbar"
 />
 <van-cell
   is-link
   size="large"
   title="修改密码"
-  link-type="navigateTo"
-  url="/pages/dashboard/index"
+bind:tap="toReset"
   custom-class="navbar"
 />
 <van-cell
   is-link
   size="large"
   title="关于我们"
-  link-type="navigateTo"
-  url="/pages/dashboard/index"
+bind:tap="toAbout"
   custom-class="navbar"
 />
 
 </van-cell-group>
-
-<van-button  round  type="danger">退出</van-button>
+<view class="container1">
+  <van-button class="centerButton"  round  type="danger" bind:tap="logOut">   退出   </van-button>
+</view>

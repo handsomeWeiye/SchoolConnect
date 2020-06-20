@@ -1,7 +1,7 @@
-<van-button   type="danger"  color="linear-gradient(to right, #4bb0ff, #6149f6)">VIP 360/年</van-button>
-
-
-<van-button   type="primary"  color="linear-gradient(to right, #4bb0ff, #6149f6)">VIP 480/年</van-button>
+<view class="row" style="height=300px;">
+  <van-button   type="danger" color="linear-gradient(to right, #4bb0ff, #6149f6)">VIP 360/年</van-button>
+<van-button   type="primary"   color="linear-gradient(to right, #4bb0ff, #6149f6)">VIP 480/年</van-button>
+</view>
 <van-radio-group value="{{ radio }}" bind:change="onChange">
   <van-cell-group title="支付方式">
     <van-cell  icon="chat-o"  title="微信支付" clickable data-name="1" bind:click="onClick">

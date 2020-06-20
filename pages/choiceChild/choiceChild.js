@@ -33,7 +33,7 @@ Page({
     })
 
     //得到childList
-    api.getChildList(sputil.getPhone()).then(res=>{
+    api.getChildList({phone:sputil.getPhone()}).then(res=>{
       console.log(res);
       this.setData({
         childList:res
@@ -62,6 +62,28 @@ Page({
          break;
       case "toLocation":
         routes.toLoaction(deviceId);
+        break; 
+      case "toInfoManage":
+          routes.toInfoManage(deviceId);
+          break; 
+      case "toUnBindDevice":
+        wx.showModal({
+          title: '解除绑定',
+          content: '确定要解除您的孩子与设备的绑定？',
+          showCancel: true,//是否显示取消按钮
+          cancelText:"取消",//默认是“取消”
+          cancelColor:'green',//取消文字的颜色
+          confirmText:"确定",//默认是“确定”
+          confirmColor: 'red',//确定文字的颜色
+          success: function (res) {
+             if (res.cancel) {
+                //点击取消,默认隐藏弹框
+             } else {
+                //点击确定
+                api.unBindDrive({deviceId:deviceId})
+             }
+          },
+       })  
         break; 
  } 
   },

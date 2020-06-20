@@ -1,4 +1,11 @@
 // pages/pay/pay.js
+
+const routes = require("../../route/routes");
+const api = require("../../api/api");
+const { updateWhiteList } = require("../../api/api");
+const sputil = require("../../utils/sputil");
+const util = require("../../utils/util.js");
+
 Page({
 
   /**
@@ -8,10 +15,48 @@ Page({
     radio: '1',
   },
 
+  pay:function () {
+    switch (this.data.radio) {
+      case "1":
+        var price ="360";
+        var goodsName = "一年360元VIP";
+        var remark  = "VIP 一年"
+        var phone = sputil.getPhone()
+        api.bmobPay({phone:phone,remark:remark,goodsName:goodsName,price:price}).then(res=>{
+          console.log(res);
+          util.showToast(res)
+        }).catch(err=>{
+          console.log(
+          err);
+          util.showToast(err)
+        })
+        break;
+    
+      case "2":
+        var price ="480";
+        var goodsName = "一年480元VIP";
+        var remark  = "VIP 一年";
+        var phone = sputil.getPhone();
+        api.bmobPay({phone:phone,remark:remark,goodsName:goodsName,price:price}).then(res=>{
+          console.log(res);
+          util.showToast(res)
+        }).catch(err=>{
+          console.log(
+          err);
+          util.showToast(err)
+        })
+        break;
+    }
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+  },
+
+  onChange:function(e){
 
   },
 

@@ -7,7 +7,7 @@ bind:change="inputChange"
     placeholder="请输入密码"
     required
     border="{{ false }}"
-    use-button-slot> <van-button slot="button" size="small" type="primary" round plain icon="scan"
+    use-button-slot> <van-button slot="button" size="small" type="primary" round plain icon="scan" bind:tap='scanCode'
       >扫一扫</van-button
     > </van-field>
 
@@ -72,9 +72,11 @@ bind:change="inputChange"
 
   
 </van-cell-group>
-<view wx:if="{{isAdd}}">
-<van-button  round  type="danger" bind:tap="onButtonClick">绑定设备</van-button>
-</view>
+<view class="container">
+  <view wx:if="{{isAdd}}">
+<van-button class="centerButton"  round  type="danger" bind:tap="onButtonClick">绑定设备</van-button></view>
 <view wx:else>
-<van-button  round  type="danger" bind:tap="onButtonClick">更新学生信息</van-button>
+<van-button class="centerButton" round  type="danger" bind:tap="onButtonClick">更新学生信息</van-button>
 </view>
+</view>
+

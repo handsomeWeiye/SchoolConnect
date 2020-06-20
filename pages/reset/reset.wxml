@@ -1,12 +1,15 @@
 <!-- login -->
-
-    
-<van-field left-icon="phone-o"   placeholder="手机号" focus="true"></van-field>
-<van-field left-icon="bookmark-o"  placeholder="新的密码" focus="true"> </van-field>
+<van-field bind:change="inputChange"
+    data-name="phone" left-icon="phone-o"   placeholder="手机号" focus="true"></van-field>
+<van-field bind:change="inputChange"
+    data-name="password" left-icon="bookmark-o"  placeholder="新的密码" focus="true"> </van-field>
 <van-cell-group>
-<van-field left-icon="comment-o"   placeholder="验证码" focus="true" use-button-slot>    <van-button slot="button" size="small" type="primary"
+<van-field bind:change="inputChange"
+    data-name="code" left-icon="comment-o"   placeholder="验证码" focus="true" use-button-slot>    <van-button bind:tap="send" slot="button" size="small" type="primary"
       >发送验证码</van-button
     > </van-field>
 </van-cell-group>
 
-<van-button>修改密码</van-button>
+<view class="container1">
+    <van-button class="centerButton"  size="large" bind:tap="reset" round type="danger" size="normal">修改密码</van-button>
+</view>

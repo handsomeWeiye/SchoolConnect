@@ -1,16 +1,19 @@
 <!-- login -->
 
     
-<van-field left-icon="phone-o"   placeholder="手机号" focus="true"></van-field>
+<van-field left-icon="phone-o"   placeholder="手机号" required focus="true" bind:change="inputChange"
+    data-name="phone"></van-field>
 
 
-<van-field left-icon="bookmark-o"  placeholder="密码" focus="true"> </van-field>
+<van-field left-icon="bookmark-o"  placeholder="密码" required password focus="true" bind:change="inputChange"
+    data-name="password"> </van-field>
 
 
 <div id="reset"><navigator url="../../pages/reset/reset">
-<view>忘记密码</view>
+<view><text style="padding-left:220px;">忘记密码?</text></view>
 </navigator></div>
 
-
-<van-button>登录</van-button>
-<van-button>去注册</van-button>
+<view class="column">
+<van-button bind:tap="login" round type="danger" size="large" style="padding-top:20px;">登录</van-button>
+<van-button bind:tap="toRegister"  round type="danger" size="large" style="padding-top:20px;">去注册</van-button>
+</view>

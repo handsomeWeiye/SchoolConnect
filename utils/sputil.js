@@ -49,7 +49,7 @@ function loginOut(){
 function isLogin(){
     var isLogin =  wx.getStorageSync("isLogin");
     console.log(typeof isLogin);
-    if(isLogin ==false){
+    if(isLogin == undefined){
         isLogin = false;
     }
     console.log(isLogin);

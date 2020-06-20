@@ -65,6 +65,8 @@ function login({phone,password}){
 
 function logOut(){
     sputil.loginOut()
+    sputil.savePhone({phone:''});
+    routes.toLogin();
 }
 
 function register({phone,password,password1}) {
@@ -390,6 +392,17 @@ function updateWhiteList({phone1,phone2,phone3,phone4,phone5,phone6,phone7,phone
 
 })
 }
+function getUserInfo({phone}){
+    return new Promise(function(resolve,reject){
+        uniqueConditionQuery({sheet:parent,field:'phone',value:phone}).then((res)=>{
+            console.log(res);
+            resolve(res)
+          }).catch(err=>{
+              console.log(err);
+              reject(err)
+          })
+    })
+}
 
 function updateUserInfo({avatar,nickName,phone}){
     return new Promise(function(resolve,reject){
@@ -450,7 +463,7 @@ function getIsPay({phone}){
         err=>{
             utils.showToast('获取会员信息失败');
             console.log('获取会员信息失败');
-            reject('获取会员信息失败')
+            resolve({"isPay":false,})
         }
      )
     })
@@ -609,7 +622,11 @@ function getStudentInfo({deviceId}){
                 console.log(res);
                 resolve (res);
             }
-        })
+        }).catch(
+            err=>{
+                reject(err)
+            }
+        )
         
     })
 }
@@ -676,6 +693,7 @@ module.exports = {
     verifyCode:verifyCode,
     sendSms:sendSms,
     reset:reset,
+    getUserInfo:getUserInfo,
     updateUserInfo:updateUserInfo,
 
 

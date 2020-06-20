@@ -63,9 +63,12 @@
   
 </van-cell-group>
 
+<view class="container">
 <view wx:if="{{isAdd}}">
-<van-button  round  type="danger" bind:tap="onButtonClick">添加电话白名单</van-button>
+<van-button class="centerButton"  round  type="danger" bind:tap="onButtonClick">添加电话白名单</van-button>
 </view>
 <view wx:else>
-<van-button  round  type="danger" bind:tap="onButtonClick">更新电话白名单</van-button>
+<van-button class="centerButton" round  type="danger" bind:tap="onButtonClick">更新电话白名单</van-button>
 </view>
+</view>
+
