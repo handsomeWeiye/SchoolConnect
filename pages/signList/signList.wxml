@@ -1,2 +1,8 @@
-
-<van-cell title="打卡记录" value="您的孩子 于2020.11.20 8:30 进入 十陵小学 " wx:for="{{10}}" />
+<view wx:if="{{signList.legth==0}}">
+    <text >暂时没有打卡记录</text>
+</view>
+<view wx:else>
+<block wx:for="{{signList}}">
+<van-cell title="打卡记录" value="您的孩子于{{item.createdAt }}进入十陵小学 "  />
+</block>
+</view>

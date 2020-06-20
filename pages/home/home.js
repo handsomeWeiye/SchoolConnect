@@ -9,22 +9,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls:[
-      "http://files.weiye.site/2020/05/23/1e8308d9-10ba-4453-b9f5-0d298826c8f8.jpg",
-      "http://files.weiye.site/2020/05/23/b20f8602-a7e1-4937-842e-ebc204dca28a.jpg",
-      "http://files.weiye.site/2020/05/23/1654205f-a9fb-4d18-ab46-424cbbe5785f.jpg"
-    ],
+    imgUrls:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    api.login('18306832083','24351587uytr');
-    sputil.loginOut();
-    sputil.isLogin()
-    
+    api.getBannerList().then(res=>{
+      console.log(res);
+      this.setData({
+        imgUrls:res
+      })
+    })
+
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -75,18 +75,32 @@ Page({
 
   },
 
-  toHome(){
-    routes.toHome()
-  },
-  toWhiteList(){
-    routes.toWhiteList()
-  },
-  toSignList(){
-    routes.toSignList()
-  },
-  toLocation(){
-    routes.toLoaction()
-  },
+  //跳转到设备选择页面
+ toChoiceChild(e) {
+    console.log(e)
+    var routeStr = String(e.currentTarget.dataset.route);
+    routes.toChoiceChild(routeStr);
+    // wx.navigateTo({
+    //   url: "/pages/choiceChild/choiceChild?route=" + e.currentTarget.dataset.route 
+    // })
+    },
+
+  //   +'&'+ "price=" + e.currentTarget.dataset.minprice 
+  // toChoiceChild(){
+  //   routes.toChoiceChild()
+  // },
+  // toHome(){
+  //   routes.toHome()
+  // },
+  // toWhiteList(){
+  //   routes.toWhiteList()
+  // },
+  // toSignList(){
+  //   routes.toSignList()
+  // },
+  // toLocation(){
+  //   routes.toLoaction()
+  // },
   toBindDevice(){
     routes.toBindDevice()
   }

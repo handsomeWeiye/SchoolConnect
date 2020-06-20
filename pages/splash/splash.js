@@ -6,18 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imageUrl:['']
+    imageUrls:undefined,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var imageUrl = api.getSplashList()
-    console.log(imageUrl);
-    this.setData({
-      imageUrl:res
-    })
+  var that = this;
+  api.getSplashList().then(res=>{
+  console.log(res);
+  this.setData({
+    imageUrls:res
+  })
+})
+
   },
 
   /**
@@ -27,18 +30,14 @@ Page({
 
   },
 
-  goHome:function(){
-    wx.switchTab({
-      url: '../home/home',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
     setTimeout(function () {
       route.toHome()
-    }, 3500) //
+    }, 100000) //
   },
 
   /**

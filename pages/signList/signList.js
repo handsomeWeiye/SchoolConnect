@@ -1,18 +1,33 @@
 // pages/signList/signList.js
+const api = require("../../api/api");
+const sputil = require("../../utils/sputil");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    signList:undefined,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var deviceId = String(options.deviceId);
+    console.log(deviceId);
+    api.getSignListOne({deviceId:deviceId}).then(res=>{console.log(res);
+      this.setData({
+        signList:res
+      })
+    }).catch(
+      err=>{
+        console.log(err);
+        this.setData({
+          signList:res
+        })
+      }
+    )
   },
 
   /**

@@ -228,7 +228,7 @@ function reset({phone,code,password}){
 function getBannerList(){
     return new Promise(function(resolve,reject){
     banner.find().then(res=>{
-        if(res.length){
+        if(res.length==0){
             console.log('banner无数据');
             reject('banner无数据')
         }else{
@@ -597,9 +597,9 @@ function saveStudentInfo({name='',studentNum='',sex='',school='',grade='',_class
 })
 }
 
-function getStudentInfo({phone}){
+function getStudentInfo({deviceId}){
     return new Promise(function(resolve,reject){
-        conditionQuery({sheet: student,field:'phone',value:phone}).then(res=>{
+        uniqueConditionQuery({sheet: student,field:'deviceId',value:deviceId}).then(res=>{
             console.log(res);
             if(res.length==0){
                 utils.showToast('您还没有绑定设备')

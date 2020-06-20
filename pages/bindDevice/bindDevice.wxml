@@ -1,7 +1,8 @@
 
 <van-cell-group>
-<van-field  value="{{ password }}"
-    type="password"
+<van-field  value="{{ deviceId }}"
+bind:change="inputChange"
+    data-name="deviceId"
     label="设备编号"
     placeholder="请输入密码"
     required
@@ -12,52 +13,68 @@
 
 
  <van-field
-    value="{{ username }}"
+    value="{{ school }}"
     required
     clearable
     label="学校"
     placeholder="请输入学校"
     bind:click-icon="onClickIcon"
+    bind:change="inputChange"
+    data-name="school"
   />
 
   <van-field
-    value="{{ password }}"
+    value="{{ grade }}"
     label="年级"
     placeholder="请输入年级"
     required
     border="{{ false }}"
+    bind:change="inputChange"
+    data-name="grade"
   />
 
     <van-field
-    value="{{ password }}"
+    value="{{ _class }}"
     label="班级"
     placeholder="请输入班级"
     required
     border="{{ false }}"
+    bind:change="inputChange"
+    data-name="_class"
   />
     <van-field
-    value="{{ password }}"
+    value="{{ name }}"
     label="姓名"
     placeholder="请输入姓名"
     required
     border="{{ false }}"
+    bind:change="inputChange"
+    data-name="name"
   />
     <van-field
-    value="{{ password }}"
+    value="{{ sex }}"
     label="性别"
     placeholder="请输入性别"
     required
     border="{{ false }}"
+    bind:change="inputChange"
+    data-name="sex"
   />
     <van-field
-    value="{{ password }}"
+    value="{{ studentNum }}"
 
     label="学号"
     placeholder="请输入学号"
     border="{{ false }}"
+    bind:change="inputChange"
+    data-name="studentNum"
   />
 
   
 </van-cell-group>
-
-<van-button  round  type="danger">绑定设备</van-button>
+<view wx:if="{{isAdd}}">
+<van-button  round  type="danger" bind:tap="onButtonClick">绑定设备</van-button>
+</view>
+<view wx:else>
+<van-button  round  type="danger" bind:tap="onButtonClick">更新学生信息</van-button>
+</view>

@@ -1,15 +1,24 @@
 {
   "pages": [
-    "pages/test/test",
+    "pages/bindDevice/bindDevice",
+    "pages/home/home",
+    "pages/signList/signList",
+
+    "pages/whiteList/whiteList",
+
+    "pages/choiceChild/choiceChild",
     "pages/splash/splash",
+
+
+    "pages/test/test",
     "pages/location/location",
     "pages/about/about",
     "pages/pay/pay",
-    "pages/home/home",
-    "pages/signList/signList",
-    "pages/whiteList/whiteList",
-    "pages/choiceChild/choiceChild",
-    "pages/bindDevice/bindDevice",
+
+
+
+
+
     "pages/mine/mine",
     "pages/message/message",
     "pages/reset/reset",

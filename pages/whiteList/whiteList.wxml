@@ -1,57 +1,71 @@
 <van-cell-group>
 <van-field
-    value="{{ username }}"
+    value="{{ phone1 }}"
     required
     clearable
     label="电话1(SOS)"
     placeholder="该电话同时为紧急联系电话"
-    bind:click-icon="onClickIcon"
+        bind:change="inputChange"
+    data-name="phone1"
   />
 
   <van-field
-    value="{{ password }}"
+    value="{{ phone2 }}"
     label="电话2"
-
     required
     border="{{ false }}"
+        bind:change="inputChange"
+    data-name="phone2"
   />
 
     <van-field
-    value="{{ password }}"
+    value="{{ phone3 }}"
     label="电话3"
-
     required
     border="{{ false }}"
+        bind:change="inputChange"
+    data-name="phone3"
   />
     <van-field
-    value="{{ password }}"
+    value="{{ phone4 }}"
     label="电话4"
-
     required
     border="{{ false }}"
+        bind:change="inputChange"
+    data-name="phone4"
   />
     <van-field
-    value="{{ password }}"
+    value="{{ phone5 }}"
     label="电话5"
     required
     border="{{ false }}"
+        bind:change="inputChange"
+    data-name="phone5"
   />
     <van-field
-    value="{{ password }}"
-
+    value="{{ phone6 }}"
     label="电话6"
+    required
     border="{{ false }}"
+        bind:change="inputChange"
+    data-name="phone6"
   />
 
       <van-field
-    value="{{ password }}"
-
+    value="{{ phone7 }}"
     label="电话7"
-
+    required
     border="{{ false }}"
+    bind:change="inputChange"
+    data-name="phone7"
   />
 
   
 </van-cell-group>
 
-<van-button  round  type="danger">添加电话白名单</van-button>
+<view wx:if="{{isAdd}}">
+<van-button  round  type="danger" bind:tap="onButtonClick">添加电话白名单</van-button>
+</view>
+<view wx:else>
+<van-button  round  type="danger" bind:tap="onButtonClick">更新电话白名单</van-button>
+</view>

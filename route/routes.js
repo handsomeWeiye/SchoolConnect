@@ -30,31 +30,27 @@ function toHome() {
       })
 }
 
-function toSignList() {
+function toSignList(deviceId) {
+  wx.navigateTo({
+    url: '/pages/signList/signList?deviceId=' + deviceId
+    })
+}
+
+function toWhiteList(deviceId) {
     wx.navigateTo({
-        url: '/pages/signList/signList'
+        url: '/pages/whiteList/whiteList?deviceId=' + deviceId
       })
 }
 
-function toWhiteList() {
+
+
+function toLoaction(deviceId) {
     wx.navigateTo({
-        url: '/pages/whiteList/whiteList'
+        url: '/pages/location/location?deviceId=' + deviceId
       })
 }
 
 
-
-function toLoaction() {
-    wx.navigateTo({
-        url: '/pages/location/location'
-      })
-}
-
-// function toSignList() {
-//     wx.navigateTo({
-//         url: '/pages/signList/signList'
-//       })
-// }
 
 function toMine() {
     wx.switchTab({
@@ -72,9 +68,9 @@ function toBindDevice() {
       })
 }
 
-function toChoiceChild(){
+function toChoiceChild(routeStr){
     wx.navigateTo({
-        url: '/pages/choiceChild/choiceChild'
+        url: '/pages/choiceChild/choiceChild?route=' + routeStr
       })
 }
 

@@ -1,5 +1,7 @@
 <swiper style="height: 100%;width: 100%;" indicator-dots>
-  <swiper-item wx:for="{{ imageUrl }}" wx:key="{{ item.id }}" style="flex: 1;">
-    <image src="{{ item.image.url}}" mode="aspectFill" style="position: absolute;height: 100%;width: 100%;opacity: .8;" />
+  <block wx:for="{{imageUrls}}">
+  <swiper-item  style="flex: 1;position: absolute;height: 100%;width: 100%;opacity: .8;" mode="aspectFill" >
+    <image src="{{ item.imageUrl}}" />
   </swiper-item>
+  </block>
 </swiper>
